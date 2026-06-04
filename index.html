@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SuspensionX Malaysia | Repair Platform Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">SX</div>
+      <div>
+        <strong>SuspensionX Malaysia</strong>
+        <span>Luxury Suspension Repair Coordination</span>
+      </div>
+    </div>
+    <nav>
+      <button class="nav-btn active" data-page="customer">Customer Front-End</button>
+      <button class="nav-btn" data-page="backend">Owner Back-End</button>
+      <button class="nav-btn" data-page="status">Customer Status Link</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="customer" class="page active">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Don’t replace first. Rebuild smarter.</p>
+          <h1>Air Suspension & Absorber Repair for Luxury, Continental & Performance Cars.</h1>
+          <p class="hero-text">Before spending RM50k–RM200k on full replacement, check whether your suspension can be professionally repaired or rebuilt through our appointed specialist workshop network.</p>
+          <div class="hero-actions">
+            <a class="primary" href="#enquiry-form">Get Estimate</a>
+            <a class="secondary" href="#price-tool">Compare Price</a>
+          </div>
+          <div class="trust-row">
+            <span>Photo / Video Update</span>
+            <span>Booking Based Flow</span>
+            <span>Warranty Record</span>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Common Problems We Handle</h3>
+          <ul>
+            <li>Car one side lower / sinks overnight</li>
+            <li>Air suspension warning light</li>
+            <li>Absorber leaking or knocking sound</li>
+            <li>Workshop cannot solve repeated issue</li>
+            <li>Original replacement quotation too high</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="grid two" id="price-tool">
+        <div class="card">
+          <h2>Price Comparison Tool</h2>
+          <p class="muted">Select a vehicle category and issue to see estimated market comparison. Final quotation depends on inspection.</p>
+          <label>Vehicle Category</label>
+          <select id="vehicleCategory"></select>
+          <label>Suspension Problem</label>
+          <select id="problemType"></select>
+          <button class="primary full" id="calculatePrice">Show Estimate</button>
+        </div>
+        <div class="card result-card" id="priceResult">
+          <h2>Estimated Comparison</h2>
+          <p class="muted">Choose vehicle category and problem to generate comparison.</p>
+        </div>
+      </section>
+
+      <section class="card flow-card">
+        <h2>How It Works</h2>
+        <div class="steps">
+          <div><b>1</b><span>Send car model, problem, photo/video</span></div>
+          <div><b>2</b><span>Receive estimated range and inspection booking</span></div>
+          <div><b>3</b><span>Specialist confirms issue and repair solution</span></div>
+          <div><b>4</b><span>Approve quotation and repair begins</span></div>
+          <div><b>5</b><span>Receive update, testing record and warranty</span></div>
+        </div>
+      </section>
+
+      <section class="grid two" id="enquiry-form">
+        <div class="card">
+          <h2>Request Suspension Estimate</h2>
+          <p class="muted">This demo saves leads into the owner dashboard using browser local storage.</p>
+          <form id="leadForm">
+            <div class="form-grid">
+              <div>
+                <label>Name</label>
+                <input required name="name" placeholder="Customer name" />
+              </div>
+              <div>
+                <label>WhatsApp</label>
+                <input required name="phone" placeholder="012-xxx xxxx" />
+              </div>
+              <div>
+                <label>Car Brand</label>
+                <select name="brand" required>
+                  <option>Mercedes-Benz</option><option>BMW</option><option>Porsche</option><option>Range Rover</option><option>Audi</option><option>Bentley</option><option>Ferrari</option><option>Lamborghini</option><option>McLaren</option><option>Alphard / Vellfire</option><option>Others</option>
+                </select>
+              </div>
+              <div>
+                <label>Model / Year</label>
+                <input name="model" placeholder="e.g. W222 S400 2018" />
+              </div>
+              <div>
+                <label>Problem</label>
+                <select name="issue" required>
+                  <option>Car one side lower</option><option>Air suspension warning</option><option>Absorber leaking</option><option>Bumpy ride</option><option>Knocking sound</option><option>Car sinks overnight</option><option>Workshop cannot solve</option><option>Original quote too expensive</option>
+                </select>
+              </div>
+              <div>
+                <label>Previous Quote</label>
+                <input name="previousQuote" placeholder="e.g. RM68,000 / none" />
+              </div>
+            </div>
+            <label>Message / Symptoms</label>
+            <textarea name="message" rows="4" placeholder="Tell us what happened, when it started, and current condition."></textarea>
+            <button class="primary full" type="submit">Submit Enquiry</button>
+          </form>
+        </div>
+        <div class="card">
+          <h2>Why Customers Use Us</h2>
+          <div class="benefit"><b>Cost Control</b><span>Compare original replacement, second-hand part and repair route.</span></div>
+          <div class="benefit"><b>Specialist Access</b><span>We coordinate with repair-focused suspension specialists.</span></div>
+          <div class="benefit"><b>Progress Visibility</b><span>Receive car received, inspection, repair, reinstalling and testing updates.</span></div>
+          <div class="benefit"><b>Warranty Record</b><span>Repair warranty is recorded and traceable in the system.</span></div>
+          <div class="benefit"><b>Concierge Option</b><span>Tow truck, pickup, delivery and priority booking can be arranged.</span></div>
+        </div>
+      </section>
+    </section>
+
+    <section id="backend" class="page">
+      <section class="dashboard-head">
+        <div>
+          <p class="eyebrow">Owner Back-End</p>
+          <h1>Lead, Quotation, Workshop Status, Deposit Float & CRM Dashboard</h1>
+        </div>
+        <div class="backend-actions">
+          <button class="secondary" id="seedDemo">Load Demo Data</button>
+          <button class="secondary" id="exportCsv">Export CSV</button>
+          <button class="secondary" id="printReport">Print Report</button>
+        </div>
+      </section>
+
+      <section class="stats" id="stats"></section>
+
+      <section class="grid three">
+        <div class="card">
+          <h2>Repair Float Account</h2>
+          <label>Target Float / Deposit</label>
+          <input type="number" id="floatTarget" value="50000" />
+          <label>Current Float Balance</label>
+          <input type="number" id="floatBalance" value="50000" />
+          <button class="primary full" id="saveFloat">Save Float</button>
+          <p class="muted small">Use this to track RM30k–RM50k dealer credit deposit with the workshop.</p>
+        </div>
+
+        <div class="card">
+          <h2>Add Manual Lead / Dealer Job</h2>
+          <input id="manualName" placeholder="Customer / Dealer name" />
+          <input id="manualPhone" placeholder="Phone" />
+          <input id="manualCar" placeholder="Car e.g. Porsche Panamera" />
+          <select id="manualSource"><option>Direct Customer</option><option>Dealer / Workshop</option><option>Used Car Dealer</option><option>Agent Code</option></select>
+          <button class="primary full" id="addManualLead">Add Lead</button>
+        </div>
+
+        <div class="card">
+          <h2>Warranty / Insurance Add-On</h2>
+          <p class="muted">Demo packaging for extended protection.</p>
+          <div class="mini-table">
+            <div><span>Basic Warranty</span><b>6 months</b></div>
+            <div><span>Extended Care</span><b>12 months</b></div>
+            <div><span>Premium Add-On</span><b>+RM800–RM2,500</b></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-title">
+          <h2>Job Pipeline</h2>
+          <input id="searchJobs" placeholder="Search customer, car, phone, status..." />
+        </div>
+        <div class="table-wrap">
+          <table id="jobsTable">
+            <thead>
+              <tr>
+                <th>ID</th><th>Customer</th><th>Car</th><th>Source</th><th>Status</th><th>Dealer Cost</th><th>Retail Price</th><th>Profit</th><th>Warranty</th><th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="grid two">
+        <div class="card">
+          <h2>Selected Job Editor</h2>
+          <p class="muted" id="selectedJobHint">Select a job from the table.</p>
+          <div id="jobEditor" class="hidden">
+            <label>Status</label>
+            <select id="editStatus"></select>
+            <div class="form-grid">
+              <div><label>Dealer Cost</label><input id="editDealerCost" type="number" /></div>
+              <div><label>Retail Price</label><input id="editRetailPrice" type="number" /></div>
+              <div><label>Warranty Months</label><input id="editWarranty" type="number" /></div>
+              <div><label>Agent Code</label><input id="editAgent" /></div>
+            </div>
+            <label>Workshop Update Note</label>
+            <textarea id="editNote" rows="4"></textarea>
+            <button class="primary full" id="saveJob">Save Job Update</button>
+            <button class="secondary full" id="copyWhatsapp">Copy Customer WhatsApp Update</button>
+          </div>
+        </div>
+        <div class="card">
+          <h2>Monthly Report Preview</h2>
+          <div id="reportBox" class="report-box"></div>
+        </div>
+      </section>
+    </section>
+
+    <section id="status" class="page">
+      <section class="card status-page">
+        <p class="eyebrow">Customer Status Link Demo</p>
+        <h1>Repair Status Tracker</h1>
+        <p class="muted">In the real system, each customer gets a private link. This demo shows the selected/latest job.</p>
+        <div id="customerStatus"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <span>Prototype demo only. Final quotation subject to physical inspection, part condition, technician confirmation and warranty terms.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
